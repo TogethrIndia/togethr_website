@@ -1,0 +1,113 @@
+name: togethr_website
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.17
+  sizer: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
+  fonts:
+    - family: GalanoClassicAlt
+      fonts:
+        - asset: assets/fonts/GalanoClassicAltBlack.otf
+        - asset: assets/fonts/GalanoClassicAltBlackItalic.otf
+          style: italic
+        - asset: assets/fonts/GalanoClassicAltBold.otf
+          weight: 700
+        - asset: assets/fonts/GalanoClassicAltBoldItalic.otf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/GalanoClassicAltExtraBold.otf
+        - asset: assets/fonts/GalanoClassicAltExtraBoldItalic.otf
+          style: italic
+        - asset: assets/fonts/GalanoClassicAltExtraLight.otf
+          weight: 200
+        - asset: assets/fonts/GalanoClassicAltExtraLightItalic.otf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/GalanoClassicAltHeavy.otf
+        - asset: assets/fonts/GalanoClassicAltHeavyItalic.otf
+          style: italic
+        - asset: assets/fonts/GalanoClassicAltItalic.otf
+          style: italic
+        - asset: assets/fonts/GalanoClassicAltLight.otf
+          weight: 300
+        - asset: assets/fonts/GalanoClassicAltLightItalic.otf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/GalanoClassicAltMedium.otf
+          weight: 500
+        - asset: assets/fonts/GalanoClassicAltMediumItalic.otf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/GalanoClassicAltRegular.otf
+        - asset: assets/fonts/GalanoClassicAltSemiBold.otf
+          weight: 600
+        - asset: assets/fonts/GalanoClassicAltSemiBoldItalic.otf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/GalanoClassicAltThin.otf
+          weight: 100
+        - asset: assets/fonts/GalanoClassicAltThinItalic.otf
+          weight: 100
+          style: italic
+
+    - family: GalanoClassic
+      fonts:
+        - asset: assets/fonts/GalanoClassicBlack.otf
+        - asset: assets/fonts/GalanoClassicBlackItalic.otf
+          style: italic
+        - asset: assets/fonts/GalanoClassicBold.otf
+          weight: 700
+        - asset: assets/fonts/GalanoClassicBoldItalic.otf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/GalanoClassicExtraBold.otf
+        - asset: assets/fonts/GalanoClassicExtraBoldItalic.otf
+          style: italic
+        - asset: assets/fonts/GalanoClassicExtraLight.otf
+          weight: 200
+        - asset: assets/fonts/GalanoClassicExtraLightItalic.otf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/GalanoClassicHeavy.otf
+        - asset: assets/fonts/GalanoClassicHeavyItalic.otf
+          style: italic
+        - asset: assets/fonts/GalanoClassicItalic.otf
+          style: italic
+        - asset: assets/fonts/GalanoClassicLight.otf
+          weight: 300
+        - asset: assets/fonts/GalanoClassicLightItalic.otf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/GalanoClassicMedium.otf
+          weight: 500
+        - asset: assets/fonts/GalanoClassicMediumItalic.otf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/GalanoClassicRegular.otf
+        - asset: assets/fonts/GalanoClassicSemiBold.otf
+          weight: 600
+        - asset: assets/fonts/GalanoClassicSemiBoldItalic.otf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/GalanoClassicThin.otf
+          weight: 100
+        - asset: assets/fonts/GalanoClassicThinItalic.otf
+          weight: 100
+          style: italic
