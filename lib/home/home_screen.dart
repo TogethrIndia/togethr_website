@@ -4,15 +4,37 @@ import 'package:togethr_website/home/widgets/choose_dating_app_widget.dart';
 import 'package:togethr_website/home/widgets/home_footer_widget.dart';
 import 'package:togethr_website/home/widgets/home_header_widget.dart';
 import 'package:togethr_website/home/widgets/where_love_begins_widget.dart';
+import 'package:togethr_website/main.dart';
+import 'package:togethr_website/utils/utils.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      extendBodyBehindAppBar: true, // Key to let the body extend behind the AppBar
+
+      appBar: isMobileView
+          ? AppBar(
+              backgroundColor: Colors.transparent,
+              actions: [
+                IconButton(
+                  icon: const Icon(Icons.menu, color: Colors.white, size: 28),
+                  onPressed: () => Utils.showHomeDrawer(context),
+                ),
+              ],
+            )
+          : AppBar(
+              backgroundColor: Colors.transparent,
+            ),
       backgroundColor: AppColors.white,
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           children: [
             HomeHeaderWidget(),

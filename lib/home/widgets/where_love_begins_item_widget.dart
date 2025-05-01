@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:togethr_website/constants/app_colors.dart';
 import 'package:togethr_website/constants/app_strings.dart';
 import 'package:togethr_website/constants/text_styles.dart';
+import 'package:togethr_website/utils/utils.dart';
 
 class WhereLoveBeginsItemWidget extends StatelessWidget {
   final String title;
@@ -13,11 +14,13 @@ class WhereLoveBeginsItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = Utils.getWindowSize(context);
+    final double screenWidth = size.width;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
       height: 230,
-      width: 350,
-      margin: EdgeInsets.symmetric(horizontal: 8),
+      width: screenWidth * 0.3,
+      margin: const EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
           color: AppColors.white,
           border: Border.all(color: AppColors.grey200),

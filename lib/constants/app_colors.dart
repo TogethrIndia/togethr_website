@@ -15,7 +15,7 @@ class AppColors {
   static const Color grey200 = Color(0xffE4EAF0);
   static const Color textPrimary = Color(0xff241456);
   static const Color textSecondary = Color(0xff1A1331);
+  static const Color drawerColor = Color(0xff110636);
 
   // background: var(--text-secondary, #1A1331);
-
 }

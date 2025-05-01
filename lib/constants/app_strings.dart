@@ -56,4 +56,6 @@ class AppStrings {
   static const String legal = 'Legal';
   static const String termsOfService = 'Terms of Service';
   static const String privacyPolicy = 'Privacy Policy';
+  static const String downloadTheApp = "Download the App Now!";
+  static const String features = "Features";
 }

@@ -4,6 +4,7 @@ import 'package:togethr_website/constants/app_icons.dart';
 import 'package:togethr_website/constants/app_strings.dart';
 import 'package:togethr_website/constants/size_config.dart';
 import 'package:togethr_website/constants/text_styles.dart';
+import 'package:togethr_website/main.dart';
 import 'package:togethr_website/utils/utils.dart';
 import 'package:togethr_website/widgets/custom_button.dart';
 
@@ -32,42 +33,45 @@ class HomeHeaderWidget extends StatelessWidget {
             Row(
               children: [
                 Image.asset(AppIcons.togethrLogo, height: 40),
-                const SizedBox(width: 40),
-                Text(
-                  AppStrings.events,
-                  style: semiBoldStyle500Galano(context: context, fontSize: 14, fontColor: AppColors.grey100),
-                ),
-                const SizedBox(width: 40),
-                Text(
-                  AppStrings.blogs,
-                  style: semiBoldStyle500Galano(context: context, fontSize: 14, fontColor: AppColors.grey100),
-                ),
-                const Spacer(),
-                Text(
-                  AppStrings.haveAnAccount,
-                  style: semiBoldStyle500Galano(context: context, fontSize: 14, fontColor: AppColors.grey100),
-                ),
-                const SizedBox(width: 40),
-                CustomButton(
-                  color: AppColors.white,
-                  borderColor: AppColors.white,
-                  text: AppStrings.joinNow,
-                  textStyle: semiBoldStyle600Galano(
-                    context: context,
-                    fontColor: AppColors.grey900,
-                    fontSize: 14,
+                // if (!isMobileView) ...[
+                if (!isMobileView) ...[
+                  const SizedBox(width: 40),
+                  Text(
+                    AppStrings.events,
+                    style: semiBoldStyle500Galano(context: context, fontSize: 14, fontColor: AppColors.grey100),
                   ),
-                ),
+                  const SizedBox(width: 40),
+                  Text(
+                    AppStrings.blogs,
+                    style: semiBoldStyle500Galano(context: context, fontSize: 14, fontColor: AppColors.grey100),
+                  ),
+                  const Spacer(),
+                  Text(
+                    AppStrings.haveAnAccount,
+                    style: semiBoldStyle500Galano(context: context, fontSize: 14, fontColor: AppColors.grey100),
+                  ),
+                  const SizedBox(width: 40),
+                  CustomButton(
+                    color: AppColors.white,
+                    borderColor: AppColors.white,
+                    text: AppStrings.joinNow,
+                    textStyle: semiBoldStyle600Galano(
+                      context: context,
+                      fontColor: AppColors.grey900,
+                      fontSize: 14,
+                    ),
+                  ),
+                ]
+
+                //  ]
               ],
             ),
 
             const SizedBox(height: 180), // Distance from top to hero
 
             // Hero Title
-            Text(
-              AppStrings.heroText,
-              style: boldStyleGalano(context: context, fontSize: 48, fontColor: AppColors.white),
-            ),
+            Text(AppStrings.heroText,
+                style: boldStyleGalano(context: context, fontSize: 48, fontColor: AppColors.white)),
 
             const SizedBox(height: 8),
 

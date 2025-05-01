@@ -26,7 +26,6 @@ class WhereLoveBeginsWidget extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           Row(
-            spacing: 24,
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(AppStrings.whereLoveBeginsTestimonials.length, (index) {
               final Map<String, String> item = AppStrings.whereLoveBeginsTestimonials[index];

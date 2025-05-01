@@ -7,4 +7,6 @@ class AppIcons {
   static const String instagramIcon = "assets/icons/instagram_icon.png";
   static const String linkedinIcon = "assets/icons/linkedin_icon.png";
   static const String xIcon = "assets/icons/X_icon.png";
+  static const String downloadAppStore = "assets/icons/download_app_store.png";
+  static const String downloadPlayStore = "assets/icons/download_play_store.png";
 }
