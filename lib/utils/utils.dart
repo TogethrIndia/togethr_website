@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:togethr_website/constants/app_colors.dart';
 import 'package:togethr_website/home/widgets/home_drawer_widget.dart';
@@ -12,14 +14,35 @@ class Utils {
       context: context,
       barrierDismissible: true,
       barrierLabel: "Menu",
-      barrierColor: Colors.transparent,
+      barrierColor: Colors.transparent, // Slight dim for rest of screen
       transitionDuration: const Duration(milliseconds: 300),
       pageBuilder: (context, anim1, anim2) {
-        return const HomeDrawerWidget();
+        return Stack(
+          children: [
+            // The sliding drawer on the right
+            Align(
+              alignment: Alignment.centerRight,
+              child: SlideTransition(
+                position: Tween(begin: const Offset(1, 0), end: Offset.zero)
+                    .animate(CurvedAnimation(parent: anim1, curve: Curves.easeOut)),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.75,
+                  height: double.infinity,
+                  child: ClipRRect(
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+                      child: const HomeDrawerWidget(),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        );
       },
       transitionBuilder: (context, anim1, anim2, child) {
         return SlideTransition(
-          position: Tween(begin: const Offset(1, 0), end: const Offset(0, 0)).animate(anim1),
+          position: Tween(begin: const Offset(1, 0), end: Offset.zero).animate(anim1),
           child: child,
         );
       },

@@ -24,15 +24,25 @@ class _HomeScreenState extends State<HomeScreen> {
       extendBodyBehindAppBar: true, // Key to let the body extend behind the AppBar
 
       appBar: isMobileView
-          ? AppBar(
-              backgroundColor: Colors.transparent,
-              actions: [
-                IconButton(
-                  icon: const Icon(Icons.menu, color: Colors.white, size: 28),
-                  onPressed: () => Utils.showHomeDrawer(context),
-                ),
-              ],
-            )
+          ? PreferredSize(
+              preferredSize: const Size.fromHeight(kToolbarHeight + 40), // total height = toolbar + padding
+
+              child: Column(
+                children: [
+                  const SizedBox(height: 32), // pushes the AppBar down
+                  AppBar(
+                    backgroundColor: Colors.transparent,
+                    elevation: 0,
+                    automaticallyImplyLeading: false,
+                    actions: [
+                      IconButton(
+                        icon: const Icon(Icons.menu, color: Colors.white, size: 28),
+                        onPressed: () => Utils.showHomeDrawer(context),
+                      ),
+                    ],
+                  ),
+                ],
+              ))
           : AppBar(
               backgroundColor: Colors.transparent,
             ),

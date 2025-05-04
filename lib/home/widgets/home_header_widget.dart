@@ -14,7 +14,7 @@ class HomeHeaderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = Utils.getWindowSize(context);
     final double screenWidth = size.width;
-    final double? imageHeight = isMobileView ? 689 : null;
+    final double imageHeight = isMobileView ? 689 : 792;
 
     return Container(
       height: imageHeight,
@@ -27,15 +27,15 @@ class HomeHeaderWidget extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: isMobileView ? 16 : screenWidth * 0.1, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: isMobileView ? 16 : screenWidth * 0.1, vertical: 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: isMobileView ? 40 : 24),
             Row(
               children: [
                 Image.asset(AppIcons.togethrLogo, height: 40),
                 if (!isMobileView) ...[
-                  const SizedBox(width: 40),
                   Text(
                     AppStrings.events,
                     style: semiBoldStyle500Galano(context: context, fontSize: 14, fontColor: AppColors.grey100),
@@ -71,7 +71,7 @@ class HomeHeaderWidget extends StatelessWidget {
             Text(AppStrings.heroText,
                 style: boldStyleGalano(context: context, fontSize: isMobileView ? 32 : 48, fontColor: AppColors.white)),
 
-            const SizedBox(height: 8),
+            SizedBox(height: isMobileView ? 16 : 8),
 
             // Hero Subtitle
             SizedBox(

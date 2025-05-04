@@ -11,52 +11,49 @@ class HomeDrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = Utils.getWindowSize(context).width;
-    return Align(
-      alignment: Alignment.centerRight,
-      child: Material(
-        color: Colors.transparent,
-        child: Container(
-          width: screenWidth < 500 ? screenWidth * 0.8 : 400,
-          color: AppColors.drawerColor.withValues(alpha: (0.85 * 255)),
-          child: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.topRight,
-                  child: IconButton(
-                    icon: const Icon(Icons.close, color: AppColors.white, size: 28),
-                    onPressed: () => Navigator.of(context).pop(),
-                  ),
+    return Material(
+      color: Colors.transparent,
+      child: Container(
+        width: screenWidth < 500 ? screenWidth * 0.8 : 400,
+        color: AppColors.drawerColor.withValues(alpha: (0.7 * 255)),
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                  icon: const Icon(Icons.close, color: AppColors.white, size: 28),
+                  onPressed: () => Navigator.of(context).pop(),
                 ),
-                const SizedBox(height: 28),
-                buildMenuItem(context, AppStrings.features, () {}),
-                buildMenuItem(context, AppStrings.events, () {}),
-                buildMenuItem(context, AppStrings.blogs, () {}),
-                const Spacer(),
-                Container(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: [
-                      Text(
-                        AppStrings.downloadTheApp,
-                        style: semiBoldStyle400Galano(context: context, fontColor: AppColors.white, fontSize: 14),
-                      ),
-                      const SizedBox(height: 10),
-                      Row(
-                        spacing: 10,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(AppIcons.downloadAppStore, height: 40),
-                          Image.asset(AppIcons.downloadPlayStore, height: 40),
-                        ],
-                      ),
-                    ],
-                  ),
+              ),
+              const SizedBox(height: 28),
+              buildMenuItem(context, AppStrings.features, () {}),
+              buildMenuItem(context, AppStrings.events, () {}),
+              buildMenuItem(context, AppStrings.blogs, () {}),
+              const Spacer(),
+              Container(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    Text(
+                      AppStrings.downloadTheApp,
+                      style: semiBoldStyle400Galano(context: context, fontColor: AppColors.white, fontSize: 14),
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      spacing: 10,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(AppIcons.downloadAppStore, height: 40),
+                        Image.asset(AppIcons.downloadPlayStore, height: 40),
+                      ],
+                    ),
+                  ],
                 ),
-                const Spacer(),
-              ],
-            ),
+              ),
+              const Spacer(),
+            ],
           ),
         ),
       ),

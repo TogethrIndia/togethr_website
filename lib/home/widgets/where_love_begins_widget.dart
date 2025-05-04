@@ -15,11 +15,6 @@ class WhereLoveBeginsWidget extends StatefulWidget {
 
 class _WhereLoveBeginsWidgetState extends State<WhereLoveBeginsWidget> {
   int selectedIndex = 0;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
