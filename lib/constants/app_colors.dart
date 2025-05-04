@@ -18,4 +18,5 @@ class AppColors {
   static const Color drawerColor = Color(0xff110636);
   static const Color primary100 = Color(0xffEEEEFF);
   static const Color grey700 = Color(0xff586572);
+  static const Color grey300 = Color(0xffD0D9E2);
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:togethr_website/constants/app_colors.dart';
 import 'package:togethr_website/constants/app_icons.dart';
 import 'package:togethr_website/constants/app_strings.dart';
-import 'package:togethr_website/constants/size_config.dart';
 import 'package:togethr_website/constants/text_styles.dart';
 import 'package:togethr_website/main.dart';
 import 'package:togethr_website/utils/utils.dart';
@@ -15,7 +14,7 @@ class HomeHeaderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = Utils.getWindowSize(context);
     final double screenWidth = size.width;
-    final double? imageHeight = isMobileView ? 900 : null;
+    final double? imageHeight = isMobileView ? 689 : null;
 
     return Container(
       height: imageHeight,
@@ -24,19 +23,17 @@ class HomeHeaderWidget extends StatelessWidget {
           image: AssetImage(
             isMobileView ? AppIcons.homeHeaderMobileIcon : AppIcons.homeHeaderIcon,
           ),
-          fit: BoxFit.fill,
+          fit: BoxFit.cover,
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.1, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: isMobileView ? 16 : screenWidth * 0.1, vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Top navbar
             Row(
               children: [
                 Image.asset(AppIcons.togethrLogo, height: 40),
-                // if (!isMobileView) ...[
                 if (!isMobileView) ...[
                   const SizedBox(width: 40),
                   Text(
@@ -65,8 +62,6 @@ class HomeHeaderWidget extends StatelessWidget {
                     ),
                   ),
                 ]
-
-                //  ]
               ],
             ),
 
@@ -74,7 +69,7 @@ class HomeHeaderWidget extends StatelessWidget {
 
             // Hero Title
             Text(AppStrings.heroText,
-                style: boldStyleGalano(context: context, fontSize: 48, fontColor: AppColors.white)),
+                style: boldStyleGalano(context: context, fontSize: isMobileView ? 32 : 48, fontColor: AppColors.white)),
 
             const SizedBox(height: 8),
 
@@ -99,7 +94,7 @@ class HomeHeaderWidget extends StatelessWidget {
             SizedBox(height: isMobileView ? 24 : 60),
             Container(
               width: 242,
-              height: 52,
+              height: isMobileView ? 48 : 52,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),

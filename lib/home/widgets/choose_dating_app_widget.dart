@@ -11,7 +11,7 @@ class ChooseDatingAppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: isMobileView ? 16 : 160, vertical: 80),
+      padding: EdgeInsets.symmetric(horizontal: isMobileView ? 16 : 160, vertical: isMobileView ? 24 : 80),
       color: AppColors.grey100,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

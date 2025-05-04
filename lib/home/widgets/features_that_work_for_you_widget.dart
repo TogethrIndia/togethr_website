@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:togethr_website/constants/app_colors.dart';
 import 'package:togethr_website/constants/app_constants.dart';
-import 'package:togethr_website/constants/app_icons.dart';
 import 'package:togethr_website/constants/app_strings.dart';
 import 'package:togethr_website/constants/text_styles.dart';
 import 'package:togethr_website/main.dart';
@@ -15,21 +14,24 @@ class FeaturesThatWorkForYouWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: isMobileView ? 16 : 150),
       child: Column(
         children: [
-          const SizedBox(height: 80),
-          Text(
-            AppStrings.featureWorks,
-            style: boldStyleGalano(
-              context: context,
-              fontColor: AppColors.grey900,
-              fontSize: 32,
+          SizedBox(height: isMobileView ? 40 : 80),
+          Padding(
+            padding: EdgeInsets.all(isMobileView ? 16 : 0.0),
+            child: Text(
+              AppStrings.featureWorks,
+              style: boldStyleGalano(
+                context: context,
+                fontColor: AppColors.grey900,
+                fontSize: isMobileView ? 24 : 32,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
           ),
           const SizedBox(height: 24),
           GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              padding: const EdgeInsets.symmetric(vertical: 12),
+              padding: const EdgeInsets.symmetric(vertical: 0),
               itemCount: AppConstants.featuresMap.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: isMobileView ? 1 : 3, mainAxisExtent: 450, crossAxisSpacing: 24, mainAxisSpacing: 24),
