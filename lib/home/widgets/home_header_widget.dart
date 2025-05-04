@@ -15,17 +15,20 @@ class HomeHeaderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = Utils.getWindowSize(context);
     final double screenWidth = size.width;
+    final double? imageHeight = isMobileView ? 900 : null;
 
     return Container(
-      decoration: const BoxDecoration(
+      height: imageHeight,
+      decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(
-              AppIcons.homeHeaderIcon,
-            ),
-            fit: BoxFit.cover),
+          image: AssetImage(
+            isMobileView ? AppIcons.homeHeaderMobileIcon : AppIcons.homeHeaderIcon,
+          ),
+          fit: BoxFit.fill,
+        ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 150, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.1, vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -67,7 +70,7 @@ class HomeHeaderWidget extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: 180), // Distance from top to hero
+            SizedBox(height: isMobileView ? 40 : 180), // Distance from top to hero
 
             // Hero Title
             Text(AppStrings.heroText,
@@ -77,7 +80,7 @@ class HomeHeaderWidget extends StatelessWidget {
 
             // Hero Subtitle
             SizedBox(
-              width: screenWidth * 0.4,
+              width: isMobileView ? double.infinity : screenWidth * 0.4,
               child: RichText(
                 text: TextSpan(
                   children: <TextSpan>[
@@ -93,7 +96,7 @@ class HomeHeaderWidget extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 60),
+            SizedBox(height: isMobileView ? 24 : 60),
             Container(
               width: 242,
               height: 52,

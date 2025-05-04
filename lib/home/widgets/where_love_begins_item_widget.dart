@@ -20,13 +20,14 @@ class WhereLoveBeginsItemWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
       height: 230,
       width: screenWidth * 0.3,
-      margin: const EdgeInsets.symmetric(horizontal: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
           color: AppColors.white,
           border: Border.all(color: AppColors.grey200),
           borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40), topRight: Radius.circular(40))),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             description,
@@ -35,9 +36,11 @@ class WhereLoveBeginsItemWidget extends StatelessWidget {
           const SizedBox(height: 10),
           Row(
             mainAxisSize: MainAxisSize.min,
+            spacing: 24,
             children: [
-              Image.asset(picPath, height: 60),
+              CircleAvatar(radius: 30, child: Image.asset(picPath, height: 60)),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     name,

@@ -1,8 +1,10 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:togethr_website/constants/app_colors.dart';
 import 'package:togethr_website/constants/app_strings.dart';
 import 'package:togethr_website/constants/text_styles.dart';
 import 'package:togethr_website/home/widgets/where_love_begins_item_widget.dart';
+import 'package:togethr_website/main.dart';
 
 class WhereLoveBeginsWidget extends StatelessWidget {
   const WhereLoveBeginsWidget({super.key});
@@ -16,27 +18,50 @@ class WhereLoveBeginsWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(height: 60),
-          Text(
-            AppStrings.whereLoveBegins,
-            style: boldStyleGalano(
-              context: context,
-              fontColor: AppColors.grey900,
-              fontSize: 32,
+          if (!isMobileView)
+            Text(
+              AppStrings.whereLoveBegins,
+              style: boldStyleGalano(
+                context: context,
+                fontColor: AppColors.grey900,
+                fontSize: 32,
+              ),
             ),
-          ),
           const SizedBox(height: 24),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(AppStrings.whereLoveBeginsTestimonials.length, (index) {
-              final Map<String, String> item = AppStrings.whereLoveBeginsTestimonials[index];
-              return WhereLoveBeginsItemWidget(
-                title: item[AppStrings.title] ?? '',
-                description: item[AppStrings.description] ?? '',
-                name: item[AppStrings.name] ?? '',
-                picPath: "assets/icons/fake_women.png",
-              );
-            }),
-          ),
+          isMobileView
+              ? CarouselSlider(
+                  options: CarouselOptions(
+                    autoPlay: (AppStrings.whereLoveBeginsTestimonials).length > 1 ? true : false,
+                    disableCenter: true,
+                    autoPlayInterval: const Duration(seconds: 8),
+                    autoPlayAnimationDuration: const Duration(seconds: 4),
+                    viewportFraction: 1,
+                    height: 230,
+                    onPageChanged: (index, reason) {
+                      //    context.read<AccountBloc>().add(SetCorporateActionIndexEvent(index));
+                    },
+                  ),
+                  items: (AppStrings.whereLoveBeginsTestimonials).map((item) {
+                    return WhereLoveBeginsItemWidget(
+                      title: item[AppStrings.title] ?? '',
+                      description: item[AppStrings.description] ?? '',
+                      name: item[AppStrings.name] ?? '',
+                      picPath: "assets/icons/fake_women.png",
+                    );
+                  }).toList(),
+                )
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(AppStrings.whereLoveBeginsTestimonials.length, (index) {
+                    final Map<String, String> item = AppStrings.whereLoveBeginsTestimonials[index];
+                    return WhereLoveBeginsItemWidget(
+                      title: item[AppStrings.title] ?? '',
+                      description: item[AppStrings.description] ?? '',
+                      name: item[AppStrings.name] ?? '',
+                      picPath: "assets/icons/fake_women.png",
+                    );
+                  }),
+                ),
           const SizedBox(height: 60),
         ],
       ),

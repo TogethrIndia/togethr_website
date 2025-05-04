@@ -3,18 +3,20 @@ import 'package:togethr_website/constants/app_colors.dart';
 import 'package:togethr_website/constants/app_icons.dart';
 import 'package:togethr_website/constants/app_strings.dart';
 import 'package:togethr_website/constants/text_styles.dart';
+import 'package:togethr_website/utils/utils.dart';
 
 class HomeDrawerWidget extends StatelessWidget {
   const HomeDrawerWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = Utils.getWindowSize(context).width;
     return Align(
       alignment: Alignment.centerRight,
       child: Material(
         color: Colors.transparent,
         child: Container(
-          width: 400,
+          width: screenWidth < 500 ? screenWidth * 0.8 : 400,
           color: AppColors.drawerColor.withValues(alpha: (0.85 * 255)),
           child: SafeArea(
             child: Column(
@@ -42,10 +44,10 @@ class HomeDrawerWidget extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       Row(
+                        spacing: 10,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(AppIcons.downloadAppStore, height: 40),
-                          SizedBox(width: 10),
                           Image.asset(AppIcons.downloadPlayStore, height: 40),
                         ],
                       ),

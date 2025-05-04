@@ -44,4 +44,7 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
-.vscode/
+.vscode
+.firebase/
+.firebaserc
+firebase.json

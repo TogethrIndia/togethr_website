@@ -1,6 +1,9 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:togethr_website/constants/app_colors.dart';
 import 'package:togethr_website/home/widgets/choose_dating_app_widget.dart';
+import 'package:togethr_website/home/widgets/features_that_work_for_you_widget.dart';
 import 'package:togethr_website/home/widgets/home_footer_widget.dart';
 import 'package:togethr_website/home/widgets/home_header_widget.dart';
 import 'package:togethr_website/home/widgets/where_love_begins_widget.dart';
@@ -34,11 +37,12 @@ class _HomeScreenState extends State<HomeScreen> {
               backgroundColor: Colors.transparent,
             ),
       backgroundColor: AppColors.white,
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             HomeHeaderWidget(),
             ChooseDatingAppWidget(),
+            FeaturesThatWorkForYouWidget(),
             WhereLoveBeginsWidget(),
             HomeFooterWidget(),
           ],

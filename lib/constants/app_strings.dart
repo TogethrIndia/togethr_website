@@ -27,7 +27,7 @@ class AppStrings {
   static const String description = "description";
   static const String name = "name";
   static const String title = "title";
-  static const String whereLoveBegins = "Where Love Begins";
+  static const String whereLoveBegins = "Where love begins";
   static const List<Map<String, String>> whereLoveBeginsTestimonials = [
     {
       name: "Aisha, 27",
@@ -36,10 +36,10 @@ class AppStrings {
           "I was hesitant about online dating, but this app changed my mind. I matched with Rohan, and from our first conversation, we just clicked! Now, after a year of laughter, long talks, and endless memories, we're engaged. If you're looking for something real, this is the place to be!",
     },
     {
-      name: "Aisha, 27",
-      title: "Found my perfect match",
+      name: "Arjun, 30",
+      title: "The Best Decision Ever",
       description:
-          "I was hesitant about online dating, but this app changed my mind. I matched with Rohan, and from our first conversation, we just clicked! Now, after a year of laughter, long talks, and endless memories, we're engaged. If you're looking for something real, this is the place to be!",
+          "I had tried other dating apps, but nothing felt meaningful until I joined this one. I met Priya here, and we connected instantly over our love for travel and food. Six months later, and we’re happier than ever. Who knew a simple swipe could lead to something so special?",
     },
     {
       name: "Aisha, 27",
@@ -58,4 +58,16 @@ class AppStrings {
   static const String privacyPolicy = 'Privacy Policy';
   static const String downloadTheApp = "Download the App Now!";
   static const String features = "Features";
+  static const String featureWorks = "Features that work for you";
+  static const String openingMoves = "Opening Moves";
+  static const String openingMovesDesc =
+      "Choose Opening Moves to invite your match to start the chat, so you don’t have to.";
+  static const String videoChat = "Video chat";
+  static const String videoChatDesc = "Use video chat and audio calls to see if you’re ready to meet in person.";
+  static const String travelMode = "Travel mode";
+  static const String travelModeDesc = "Find your duty-free snack and match anywhere in the world with Travel Mode.";
+  static const String cupidTap = "Cupid Tap";
+  static const String cupidTapDesc = "Don’t just swipe right-stand out to the people you really like!";
+  static const String vibes = "Vibes";
+  static const String vibesDesc = "Find your duty-free snack and match anywhere in the world with Travel Mode.";
 }
